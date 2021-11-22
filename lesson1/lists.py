@@ -1,0 +1,11 @@
+num_list = [3, 5, 7, 9, 10.5]
+print(num_list)
+num_list.append('Python')
+print(num_list)
+count  = len(num_list)
+print(count)
+print(num_list[0])
+print(num_list[-1])
+print(num_list[1:5])
+num_list.remove ('Python')
+print(num_list)
