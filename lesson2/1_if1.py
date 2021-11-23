@@ -13,13 +13,22 @@
 * Вывести содержимое переменной на экран
 
 """
+get_age = None
+while get_age is None:
+  input_value = input('Введите пожалуйста, Ваш возраст: ')
+  try:
+    get_age = int(input_value)
+  except ValueError:
+     print('{input} - Это не число, пожалуйста введите только число'.format(input=input_value))
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-
-if __name__ == "__main__":
-    main()
+def main(age):
+      if age <= 6: 
+        return 'Детский сад'
+      elif age >= 7 and age <= 17:
+        return 'Школа'
+      elif age >= 18 and age <= 24:
+        return 'ВУЗ'
+      else:
+        return 'Работа'
+res = main(get_age)
+print(res)
