@@ -15,17 +15,18 @@
 
 def discounted(price, discount, max_discount=20):
   try:
-    price = float(price)
-    discount = float(discount)
-    max_discount = int(max_discount)
-    if max_discount >= 100:
-        raise ValueError('Слишком большая максимальная скидка')
-    if discount >= max_discount:
-        return price
-    else:
-        return price - (price * discount / 100)
+      price = float(price)
+      discount = float(discount)
+      max_discount = int(max_discount)
   except (ValueError, TypeError):
-      print('Введент неверный тип данных')
+      return 'Введент неверный тип данных'
+  if max_discount >= 100:
+    raise ValueError('Слишком большая максимальная скидка')
+  if discount >= max_discount:
+    return price
+  else:
+    return price - (price * discount / 100)
+  
   
 print(discounted(100, 2))
 print(discounted(100, "3"))
