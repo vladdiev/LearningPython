@@ -9,16 +9,15 @@
   и завершала работу при помощи оператора break
     
 """
+questions_and_answers = {"Как дела?": "Хорошо!", "Что делаешь?": "Программирую"}
 
-def hello_user():
-  answer = 'Хорошо'
-  ask = ''
-  try:
-    while ask != answer:
-      ask = input('Как дела? \n-')  
-      print(ask)
-  except KeyboardInterrupt:
-    print('Пока')
+def ask_user(answers_dict):
+    while True:
+      try:
+          user_response = input('Ask a question: \n')
+          print(answers_dict.get(user_response, 'Im sorry I didnt catch you'))
+      except KeyboardInterrupt:
+        print('Bye-Bye!')
+        break
 
-hello_user()
-
+ask_user(questions_and_answers)

@@ -15,10 +15,14 @@
     
 """
 
-questions_and_answers = {"Как дела": "Хорошо!", "Что делаешь?": "Программирую"}
+questions_and_answers = {"Как дела?": "Хорошо!", "Что делаешь?": "Программирую"}
 
+def ask_user(answers_dict):
+    while True:
+      user_response = input('Ask a question: \n')
+      print(answers_dict.get(user_response, 'Im sorry I didnt catch you'))
 
-
+ask_user(questions_and_answers)
 
 
 

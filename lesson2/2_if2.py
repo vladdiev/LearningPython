@@ -19,14 +19,14 @@ def main(one, two):
     return 0
   elif one == two:
     return 1
-  elif one != two and len(one) > len(two):
+  elif len(one) > len(two):
     return 2
-  elif one != two and two == 'learn':
+  elif two == 'learn':
     return 3
   else:
     return 'Something went wrong :( '
 
-res1 = main('something', 'learn')
+res1 = main('red', 'learn')
 res2 = main(1, 2)
 print(res1)
 print(res2)

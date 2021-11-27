@@ -18,41 +18,13 @@ phones_sales = [
     {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
   ]
   
-sales_iphone = 0 
-for total in phones_sales[0]['items_sold']:
-  sales_iphone += total
-print(f"Суммарное количество продаж для {phones_sales[0]['product']} - {sales_iphone}")
 
-sales_Xiaomi = 0 
-for total in phones_sales[1]['items_sold']:
-  sales_Xiaomi += total
-print(f"Суммарное количество продаж для {phones_sales[1]['product']} - {sales_Xiaomi}")
-
-sales_Samsung = 0 
-for total in phones_sales[2]['items_sold']:
-  sales_Samsung += total
-print(f"Суммарное количество продаж для {phones_sales[2]['product']} - {sales_Samsung}")
-
-avg_sales_iPhone = 0
-for avg in phones_sales[0]['items_sold']:
-  avg_sales_iPhone += avg 
-res_avg_iPhone = avg_sales_iPhone // len(phones_sales[0]['items_sold'])
-print(f"Среднее количество продаж для {phones_sales[0]['product']} - {res_avg_iPhone}")
-
-avg_sales_Xiaomi = 0
-for avg in phones_sales[1]['items_sold']:
-  avg_sales_Xiaomi += avg
-avg_sales_Xiaomi = avg_sales_Xiaomi // len(phones_sales[1]['items_sold'])
-print(f"Среднее количество продаж для {phones_sales[1]['product']} - {avg_sales_Xiaomi}")
-
-avg_sales_Samsung = 0
-for avg in phones_sales[2]['items_sold']:
-  avg_sales_Samsung += avg
-avg_sales_Samsung = avg_sales_Samsung // len(phones_sales[2]['items_sold'])
-print(f"Среднее количество продаж для {phones_sales[2]['product']} - {avg_sales_Samsung}")
-
-total_sum_sales = sales_iphone + sales_Xiaomi + sales_Samsung
-print (f'Суммарное количество продаж всех товаров: {total_sum_sales}')
-
-total_avg_sales = total_sum_sales // len(phones_sales)
-print (f'Среднее количество продаж всех товаров: {total_avg_sales}')
+total_sold = 0
+for sold_phone in phones_sales:
+  sum_sold = sum(sold_phone['items_sold'])
+  total_sold += sum_sold
+  avg_sold = sum_sold / len(sold_phone['items_sold'])
+  print(f"Суммарное количество продаж для: {sold_phone['product']} — {sum_sold} шт.")
+  print(f"Cреднее количество продаж для: {sold_phone['product']} — {round(avg_sold, 2)} шт.")
+print(f"Среднее количество продаж всех товаров: {round(total_sold / len (phones_sales[0]['items_sold']), 2)} шт.")
+print(f'Суммарное количество продаж всех товаров: {total_sold} шт.')

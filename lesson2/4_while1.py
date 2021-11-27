@@ -10,10 +10,9 @@
 """
 
 def hello_user():
-  answer = 'Хорошо'
-  ask = ''
-  while ask != answer:
-    ask = input('Как дела? \n-')  
-    print(ask)
-
-hello_user()
+  while True:
+    answer = input('Как дела ? \n')
+    if answer == 'Хорошо' or answer == 'хорошо':
+      break
+  
+  hello_user()
