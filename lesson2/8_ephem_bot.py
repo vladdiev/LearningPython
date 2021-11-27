@@ -49,7 +49,7 @@ def talk_to_me(update, context):
 
 
 def main():
-    mybot = Updater({settings.API_KEY}, request_kwargs= PROXY, use_context=True)
+    mybot = Updater(settings.API_KEY, request_kwargs= PROXY, use_context=True)
 
     dp = mybot.dispatcher
     dp.add_handler(CommandHandler("start",  greet_user))
